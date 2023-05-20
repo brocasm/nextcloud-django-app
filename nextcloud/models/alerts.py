@@ -4,9 +4,9 @@ from django.dispatch import Signal
 
 logger = logging.getLogger(__name__)
 
-new_membership = Signal(providing_args=["user"])
-ending_membership = Signal(providing_args=["user"])
-changing_membership_password = Signal(providing_args=["user", "password"])
+new_membership = Signal(Signal("user"))
+ending_membership = Signal(Signal("user"))
+changing_membership_password = Signal(["user", "password"])
 
 
 class MemberAlertManager:
